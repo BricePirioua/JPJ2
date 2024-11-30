@@ -1,13 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Gallery from './pages/Gallery';
-import ArtworkDetail from './pages/ArtworkDetail';
-import Biography from './pages/Biography';
-import Contact from './pages/Contact';
-import Admin from './pages/Admin';
-import { useArtworkStore } from './store/useArtworkStore';
+// ... autres imports
 
 function App() {
   const fetchArtworks = useArtworkStore((state) => state.fetchArtworks);
@@ -17,7 +10,7 @@ function App() {
   }, [fetchArtworks]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/JPJ2">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
