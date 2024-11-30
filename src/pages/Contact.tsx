@@ -12,9 +12,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle the form submission here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
     alert('Message envoyé avec succès!');
   };
@@ -37,20 +35,20 @@ const Contact: React.FC = () => {
       </motion.h1>
 
       <div className="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 className="font-serif text-2xl mb-6">Informations</h2>
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="font-serif text-2xl mb-8">Informations</h2>
+          <div className="space-y-8">
+            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
               <Mail className="h-6 w-6 text-gray-600" />
-              <span>contact@jpjolibert.com</span>
+              <span className="text-lg">contact@jpjolibert.com</span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
               <Phone className="h-6 w-6 text-gray-600" />
-              <span>+33 1 23 45 67 89</span>
+              <span className="text-lg">+33 1 23 45 67 89</span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
               <MapPin className="h-6 w-6 text-gray-600" />
-              <span>123 Rue de l'Art, 75001 Paris</span>
+              <span className="text-lg">123 Rue de l'Art, 75001 Paris</span>
             </div>
           </div>
 
@@ -63,10 +61,11 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div>
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="font-serif text-2xl mb-8">Envoyez-nous un message</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                 Nom
               </label>
               <input
@@ -76,12 +75,13 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                placeholder="Votre nom"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email
               </label>
               <input
@@ -91,12 +91,13 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                placeholder="votre@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
                 Sujet
               </label>
               <input
@@ -106,12 +107,13 @@ const Contact: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                placeholder="Sujet de votre message"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                 Message
               </label>
               <textarea
@@ -121,16 +123,17 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all resize-none"
+                placeholder="Votre message..."
               />
             </div>
 
             <button
               type="submit"
-              className="inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-base font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors"
             >
               <Send className="h-5 w-5 mr-2" />
-              Envoyer
+              Envoyer le message
             </button>
           </form>
         </div>

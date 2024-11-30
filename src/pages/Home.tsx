@@ -31,7 +31,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-xl md:text-2xl max-w-2xl mx-auto"
             >
-              Artiste peintre contemporain explorant les frontières entre
+              Artiste peintre contemporain Bordelais explorant les frontières entre
               l'abstrait et le figuratif
             </motion.p>
           </div>
